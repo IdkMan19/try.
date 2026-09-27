@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Seamless Front - Storyboard</title>
+    <style>
+        :root {
+            --navy-bg: #0b1d3a;
+            --air-bg: #4a2545;
+            --ground-bg: #2d261e;
+            --text-main: #e0e0e0;
+            --highlight: #ff9d00;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--navy-bg);
+            color: var(--text-main);
+            transition: background-color 1.5s ease;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20vh 0 10vh 0;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: var(--highlight);
+        }
+
+        .phase {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0.3;
+            transition: opacity 1s ease, transform 1s ease;
+            transform: translateY(50px);
+        }
+
+        .phase.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-size: 2em;
+            border-bottom: 2px solid var(--highlight);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .shot {
+            background: rgba(0, 0, 0, 0.4);
+            border-left: 4px solid var(--highlight);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .camera-note {
+            color: #a0a0a0;
+            font-style: italic;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(0,0,0,0.5);
+        }
+
+        th, td {
+            border: 1px solid #444;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--highlight);
+            color: #000;
+        }
+
+        .scroll-prompt {
+            position: fixed;
+            bottom: 30px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9em;
+            opacity: 0.7;
+            animation: bounce 2s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scroll-prompt">Scroll to move camera ↓</div>
+
+    <div class="container">
+        <header>
+            <h1>The Seamless Front</h1>
+            <p class="subtitle">A Continuous-Shot Animation Concept</p>
+        </header>
+
+        <!-- Phase 1: Navy -->
+        <section class="phase" id="phase-navy" data-bg="#0b1d3a">
+            <h2>Phase 1: The Deep Blue</h2>
+            
+            <div class="shot">
+                <strong>01: The Abyss</strong>
+                <p>Close-up of a Mark 48 ADCAP torpedo propeller spinning rapidly in dark blue water. God rays filter down from the surface.</p>
+                <div class="camera-note">CAMERA MOVEMENT: Tracking. Following the torpedo from behind, inches from the steel.</div>
+            </div>
+
+            <div class="shot">
+                <strong>02: The Impact & Ascend</strong>
+                <p>Torpedo hits the hull of an Arleigh Burke-class Destroyer. An orange bubble of fire expands rapidly.</p>
+                <div class="camera-note">CAMERA MOVEMENT: Rise. Caught in the shockwave, propelling vertically toward the surface.</div>
+            </div>
+
+            <div class="shot">
+                <strong>03: The Fleet</strong>
+                <p>Break the surface. The destroyer lists. A nearby Ticonderoga-class Cruiser fires a RIM-161 Standard Missile from its deck.</p>
+                <div class="camera-note">CAMERA MOVEMENT: Pan and Latch. Camera sweeps across the deck and snaps to the missile's tail fins.</div>
+            </div>
+        </section>
+
+        <!-- Phase 2: Air Force -->
+        <section class="phase" id="phase-air" data-bg="#4a2545">
+            <h2>Phase 2: The Dogfight</h2>
+            
+            <div class="shot">
+                <strong>04: The Piercing</strong>
+                <p>The sky shifts to a bruised purple sunset. The missile punches through thick cumulus clouds.</p>
+                <div class="camera-note">CAMERA MOVEMENT: Vertical Arc into Dolly. Ascent slows as the missile misses its target.</div>
+            </div>
+
+            <div class="shot">
+                <strong>05: The Intercept</strong>
+                <p>An F-117 Nighthawk streaks past. In the background, F-22s and Su-57s engage in a chaotic dogfight.</p>
+                <div class="camera-note">CAMERA MOVEMENT: Whip 180 degrees. Camera lets go of the missile and hooks onto the F-117's wingtip.</div>
+            </div>
+
+            <div class="shot">
+                <strong>06: The Drop</strong>
+                <p>The F-117's bay doors snap open. A GBU-27 Paveway III bomb is released.</p>
+                <div class="camera-note">CAMERA MOVEMENT: Freefall. Camera detaches from the wing and plummets straight down with the payload.</div>
+            </div>
+        </section>
+
+        <!-- Phase 3: Ground Forces -->
+        <section class="phase" id="phase-ground" data-bg="#2d261e">
+            <h2>Phase 3: The Frontline</h2>
+            
+            <div class="shot">
+                <strong>07: The Canopy</strong>
+                <p>Five hundred feet up, the payload's parachute deploys with a violent thwack. The ground rushes up.</p>
+                <div class="camera-note">CAMERA MOVEMENT: Dive. Camera blows past the slowed payload, accelerating toward the mud.</div>
+            </div>
+
+            <div class="shot">
+                <strong>08: The Trench</strong>
+                <p>Skimming 4 feet off the ground, roaring past sandbags, an M1A2 Abrams tank, and ducking infantry.</p>
+                <div class="camera-note">CAMERA MOVEMENT: High-speed tracking. Adding slight wobble from tank exhaust heat haze.</div>
+            </div>
+
+            <div class="shot">
+                <strong>09: The Signal</strong>
+                <p>Fly through the open door of a command bunker. Slow motion. A radio operator shouts into a handset.</p>
+                <div class="camera-note">CAMERA MOVEMENT: Zoom. Pushes directly into the black mesh of the radio microphone. Cut to black.</div>
+            </div>
+            
+            <br>
+            <h3>Technical Asset Manifest</h3>
+            <table>
+                <tr>
+                    <th>Domain</th>
+                    <th>Asset</th>
+                    <th>Role</th>
+                </tr>
+                <tr>
+                    <td>Navy</td>
+                    <td>Mark 48 ADCAP Torpedo</td>
+                    <td>Camera Guide (Underwater)</td>
+                </tr>
+                <tr>
+                    <td>Navy</td>
+                    <td>Arleigh Burke / Ticonderoga</td>
+                    <td>Environment / VLS Launch</td>
+                </tr>
+                <tr>
+                    <td>Air</td>
+                    <td>F-117 Nighthawk</td>
+                    <td>Hero Pivot Point</td>
+                </tr>
+                <tr>
+                    <td>Air</td>
+                    <td>Sukhoi Su-57</td>
+                    <td>Background Adversary</td>
+                </tr>
+                <tr>
+                    <td>Ground</td>
+                    <td>M1A2 Abrams Tank</td>
+                    <td>Ground Environment Anchor</td>
+                </tr>
+            </table>
+        </section>
+        
+        <br><br><br><br>
+    </div>
+
+    <script>
+        // JavaScript to handle background color changes and element fading on scroll
+        const phases = document.querySelectorAll('.phase');
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.6 // Trigger when 60% of the section is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add visible class for text fade-in
+                    entry.target.classList.add('visible');
+                    // Change body background color to match the phase
+                    document.body.style.backgroundColor = entry.target.getAttribute('data-bg');
+                }
+            });
+        }, observerOptions);
+
+        phases.forEach(phase => {
+            observer.observe(phase);
+        });
+    </script>
+</body>
+</html>
